@@ -1,0 +1,21 @@
+[Desktop Entry]
+Version=1.0
+Name=Browser Select
+Comment=Custom script to select a web browser
+Exec=/home/ren/scripts/browser_select/script.sh %u
+Icon=/home/ren/scripts/browser_select/default-128.ico
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+MimeType=x-scheme-handler/http;x-scheme-handler/https;
+Categories=Network;WebBrowser;
+StartupNotify=true
+Actions=new-window;new-private-window;
+
+[Desktop Action new-window]
+Name=Open a New Window
+Exec=/home/ren/scripts/browser_select/script.sh
+
+[Desktop Action new-private-window]
+Name=Open a New Private Window
+Exec=/home/ren/scripts/browser_select/script.sh --incognito
