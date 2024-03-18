@@ -4,8 +4,10 @@
 declare -A BROWSERS
 BROWSERS["Firefox"]="firefox"
 BROWSERS["Google Chrome"]="google-chrome"
-BROWSERS["Chromium"]="chromium-browser"
-BROWSERS["Opera"]="opera"
+BROWSERS["Brave"]="/usr/bin/brave-browser"
+BROWSERS["Ghostery"]="ghostery"
+# BROWSERS["Chromium"]="chromium-browser"
+# BROWSERS["Opera"]="opera"
 
 # Check for installed browsers
 INSTALLED_BROWSERS=()
