@@ -2,9 +2,10 @@
 
 # Define possible browsers
 declare -A BROWSERS
-BROWSERS["Firefox"]="firefox"
 BROWSERS["Google Chrome"]="google-chrome"
 BROWSERS["Brave"]="/usr/bin/brave-browser"
+BROWSERS["Vivaldi"]="vivaldi"
+BROWSERS["Firefox"]="firefox"
 BROWSERS["Ghostery"]="ghostery"
 # BROWSERS["Chromium"]="chromium-browser"
 # BROWSERS["Opera"]="opera"
