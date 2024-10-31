@@ -29,7 +29,7 @@ if [ ${#INSTALLED_BROWSERS[@]} -eq 0 ]; then
 fi
 
 # Create the selection menu
-BROWSER=$(zenity --list --title="Select Browser" --column="Browser" "${INSTALLED_BROWSERS[@]}")
+BROWSER=$(zenity --list --title="Select Browser" --column="Browser" --height=400 "${INSTALLED_BROWSERS[@]}")
 
 # Open the URL in the selected browser
 BROWSER_COMMAND=${BROWSERS[$BROWSER]}
