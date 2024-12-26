@@ -1,15 +1,16 @@
 #!/bin/bash
 
 # Define possible browsers in a specific order
-BROWSER_ORDER=("Brave" "Google Chrome" "Vivaldi" "Firefox" "Ghostery")
+# BROWSER_ORDER=("Brave" "Firefox" "Google Chrome" "Vivaldi" "Ghostery")
+BROWSER_ORDER=("Brave" "Firefox" "Google Chrome")
 
 # Define the corresponding commands
 declare -A BROWSERS
 BROWSERS["Brave"]="/usr/bin/brave-browser"
 BROWSERS["Google Chrome"]="google-chrome"
-BROWSERS["Vivaldi"]="vivaldi"
 BROWSERS["Firefox"]="firefox"
-BROWSERS["Ghostery"]="ghostery"
+# BROWSERS["Vivaldi"]="vivaldi"
+# BROWSERS["Ghostery"]="ghostery"
 # BROWSERS["Chromium"]="chromium-browser"
 # BROWSERS["Opera"]="opera"
 
