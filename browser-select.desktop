@@ -2,7 +2,7 @@
 Version=1.0
 Name=Browser Select
 Comment=Custom script to select a web browser
-Exec=/home/ren/scripts/browser_select/script.sh %u
+Exec=sh -c "cd /home/ren/scripts/browser_select && ./script.sh %u"
 Icon=/home/ren/scripts/browser_select/default-128.ico
 Terminal=false
 X-MultipleArgs=false
@@ -14,8 +14,8 @@ Actions=new-window;new-private-window;
 
 [Desktop Action new-window]
 Name=Open a New Window
-Exec=/home/ren/scripts/browser_select/script.sh
+Exec=sh -c "cd /home/ren/scripts/browser_select && ./script.sh"
 
 [Desktop Action new-private-window]
 Name=Open a New Private Window
-Exec=/home/ren/scripts/browser_select/script.sh --incognito
+Exec=sh -c "cd /home/ren/scripts/browser_select && ./script.sh --incognito"

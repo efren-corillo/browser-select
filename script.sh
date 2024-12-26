@@ -10,19 +10,23 @@ log() {
 # Load environment variables from .env file
 if [ -f ".env" ]; then
     log "Loading environment variables from .env file"
-    export $(grep -v '^#' .env | xargs)
+    source .env
 else
     zenity --error --text=".env file not found!"
     log ".env file not found!"
     exit 1
 fi
 
-# Define the browser command pairs from the BROWSER_COMMANDS string
+# Convert CSV string to array for browser order
+IFS=',' read -ra BROWSER_ORDER <<< "$BROWSER_ORDER"
+
 declare -A BROWSERS
 
 # Parse the BROWSER_COMMANDS string into an associative array
-IFS=',' read -ra BROWSER_ARRAY <<< "$BROWSER_COMMANDS"
-for browser_pair in "${BROWSER_ARRAY[@]}"; do
+IFS=',' read -ra BROWSER_COMMAND_ARRAY <<< "$BROWSER_COMMANDS"
+for browser_pair in "${BROWSER_COMMAND_ARRAY[@]}"; do
+    # Remove single quotes around each command
+    browser_pair=$(echo $browser_pair | sed "s/'//g")
     IFS=':' read -r browser_name browser_command <<< "$browser_pair"
     BROWSERS["$browser_name"]="$browser_command"
 done
@@ -32,7 +36,7 @@ log "Parsed browser commands."
 INSTALLED_BROWSERS=()
 for name in "${BROWSER_ORDER[@]}"; do
     command=${BROWSERS[$name]}
-    if command -v $command &> /dev/null; then
+    if command -v "$command" &> /dev/null; then
         INSTALLED_BROWSERS+=("$name")
         log "$name browser is installed."
     else
