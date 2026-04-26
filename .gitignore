@@ -1,0 +1,9 @@
+# Local cache files
+*.txt
+# Environment files
+.env
+# Temp files
+*.tmp
+*.swp
+# Logs
+*.log
